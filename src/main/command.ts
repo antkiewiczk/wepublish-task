@@ -1,4 +1,7 @@
-import CanvasCommand from './commands/canvas';
+import Canvas from './commands/canvas';
+import Rectangle from './commands/rectangle';
+import Line from './commands/line';
+import Fill from './commands/fill';
 
 export default class Command {
   static create(str) {
@@ -6,7 +9,13 @@ export default class Command {
     const action = strTrimmed[0].toUpperCase();
     switch (action) {
       case 'C':
-        return new CanvasCommand(strTrimmed);
+        return new Canvas(strTrimmed);
+      case 'R':
+        return new Rectangle(strTrimmed);
+      case 'L':
+        return new Line(strTrimmed);
+      case 'B':
+        return new Fill(strTrimmed);
       case 'Q':
         return process.exit();
       default:

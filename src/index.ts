@@ -35,7 +35,7 @@ const start = () => {
     }
 
     const action = strTrimmed[0].toUpperCase();
-    if (!['C', 'Q'].includes(action)) {
+    if (!['C', 'R', 'L', 'B', 'Q'].includes(action)) {
       promptAgain();
     }
   };
@@ -45,7 +45,6 @@ const start = () => {
     pauseReadLine(() => {
       handleInvalidAction(input);
       const command = Command.create(input);
-      console.log('command', command);
       if (command) {
         const result = command.render();
         if (result.renderAt) {
