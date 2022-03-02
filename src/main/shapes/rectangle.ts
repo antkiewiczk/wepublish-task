@@ -1,10 +1,5 @@
 import { validateShapes } from '../utils/errors';
 
-interface ShapeParams {
-  x: number;
-  y: number;
-}
-
 export default class Rectangle {
   readonly x1: number;
   readonly y1: number;
@@ -20,7 +15,7 @@ export default class Rectangle {
     this.y2 = y2;
   }
 
-  renderAt(x, y: ShapeParams) {
+  renderAt(x: number, y: number) {
     if (
       (x >= this.x1 && x <= this.x2 && (y === this.y1 || y === this.y2)) ||
       (y >= this.y1 && y <= this.y2 && (x === this.x1 || x === this.x2))
@@ -29,7 +24,7 @@ export default class Rectangle {
     return null;
   }
 
-  rendersInside(width, heigth) {
+  rendersInside(width: number, heigth: number) {
     return (
       this.x1 < width && this.y1 < heigth && this.x2 < width && this.y2 < heigth
     );

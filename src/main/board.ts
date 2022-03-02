@@ -8,7 +8,7 @@ import Fill from './shapes/fill';
 export default class Board {
   readline: ReadLine;
   shapes: Array<Rectangle | Line | Fill>;
-  grid: string[] | string;
+  grid: number[] | string[] | string;
   canvas: Canvas;
 
   constructor(int?: ReadLine) {
@@ -53,7 +53,7 @@ export default class Board {
         let square = x === 0 || y === 0 ? this.canvas.renderAt(x, y) : null;
 
         const line = this.grid[x];
-        if (!line) this.grid[x] = [];
+        if (!line) this.grid[x] = '';
 
         if (!square) {
           for (let s = this.shapes.length - 1; s >= 0; s -= 1) {

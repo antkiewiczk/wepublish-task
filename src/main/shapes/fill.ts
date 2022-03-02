@@ -9,7 +9,7 @@ export default class Fill {
   x: number;
   y: number;
   color: string;
-  grid: string;
+  grid: string[] | string;
 
   constructor(x: number, y: number, color: string) {
     validateShapes({ coords: [x, y], color });
@@ -31,7 +31,7 @@ export default class Fill {
 
   paint(grid) {
     this.grid = grid.slice(0);
-    this.floodFillLoop(this.grid, this.x, this.y, ' ', this.color);
+    this.floodFillLoop(this.grid as string, this.x, this.y, ' ', this.color);
     return this.grid;
   }
 
@@ -63,7 +63,7 @@ export default class Fill {
   }
 
   processNodeAt(
-    grid: string,
+    grid,
     x: number,
     y: number,
     targetColor: string,
@@ -72,7 +72,6 @@ export default class Fill {
   ) {
     const nextNode = grid.length > x && grid[x].length > y && grid[x][y];
     if (nextNode === targetColor) {
-      // eslint-disable-next-line
       grid[x][y] = replacementColor;
       q.push({
         x,

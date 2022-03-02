@@ -11,6 +11,7 @@ module.exports = {
     "json",
     "node",
   ],
+  rootDir: 'src',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$',
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
