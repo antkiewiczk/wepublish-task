@@ -6,6 +6,8 @@ The goal of this task is to create a console drawing program that will allow use
 dimensions and later allow the user to "draw" a shape on the same board. Supported shapes: rectangle and line.
 The user can also "fill" the space similarily as the bucket fill tool in ms paint.
 
+This project is written in javascript with typescript, utilizing node.js.
+
 The project was bootstrapped from [this boilerplate](https://github.com/jsynowiec/node-typescript-boilerplate)
 to speed up setting up the environment as well as typescript, eslint, jest and prettier support.
 
