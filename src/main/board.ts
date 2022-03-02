@@ -53,7 +53,7 @@ export default class Board {
         let square = x === 0 || y === 0 ? this.canvas.renderAt(x, y) : null;
 
         const line = this.grid[x];
-        if (!line) this.grid[x] = '';
+        if (!line) this.grid[x] = [];
 
         if (!square) {
           for (let s = this.shapes.length - 1; s >= 0; s -= 1) {
